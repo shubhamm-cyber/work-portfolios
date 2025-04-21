@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography, Paper, Button } from '@mui/material';
-import profileImage from '../assets/images/6054.jpg'; // Adjust path based on your folder structure
+import profileImage from '../assets/images/with gradient bg.png'; // Adjust path based on your folder structure
 
 const Profile = () => {
   return (
