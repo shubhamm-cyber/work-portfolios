@@ -9,9 +9,17 @@ import poisned from '../assets/images/Poisned.png';
 import soar from '../assets/images/Soar.png';
 import tusk from '../assets/images/Tuskmalwareanalysis.png';
 import multi from '../assets/images/multistage.png';
+import soar2 from '../assets/images/Splunk_Alert.png'
+
 
 
 const projects = [
+   {
+    title: 'Hands-On SOC Workflow: Detect, Investigate, Automate',
+    description: 'Built a full SOC workflow detecting suspicious PowerShell activity using Splunk, automated alerting via Tines, and real-time Slack notifications. Expanded detections through manual hunting and visualized attacker activity with a professional Splunk dashboard mapped to MITRE ATT&CK.',
+    image: soar2,
+    url: 'https://shubhamahirrao.notion.site/Hands-On-SOC-Workflow-Detect-Investigate-Automate-1dc2e78c860a8071b899dde507ec9b41?pvs=74',
+  },
   {
     title: 'SOAR EDR Project: Integrating LimaCharlie, Tines, Slack, and Email for Enhanced Cybersecurity',
     description: 'This project leverages LimaCharlie, Tines, Slack, and Email to automatically detect Suspicious Utility, notify relevant personnel, and manage machine isolation decisions, streamlining incident response and enhancing threat mitigation.',
