@@ -20,7 +20,7 @@ const projects = [
     title: 'Cloud SOC: End-to-End Detection, Investigation & SOAR Automation in Azure (Sentinel + Logic Apps)',
     description: 'Built a cloud-native SOC workflow in Microsoft Sentinel, detecting advanced threats with custom KQL rules and streamlining incident handling through Logic Apps automation, while providing end-to-end attack visibility via a powerful Azure dashboard.',
     image: azure,
-    url: 'https://shubhamahirrao.notion.site/Hands-On-SOC-Workflow-Detect-Investigate-Automate-1dc2e78c860a8071b899dde507ec9b41',
+    url: 'https://shubhamahirrao.notion.site/End-to-End-Detection-Investigation-Automated-Response-Workflow-in-Azure-Cloud-Environment-2462e78c860a80978c70fef1fedd0d32?pvs=73',
   },
    {
     title: 'Hands-On SOC Workflow: Detect, Investigate, Automate',
