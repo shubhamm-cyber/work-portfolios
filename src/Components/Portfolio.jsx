@@ -9,23 +9,26 @@ import poisned from '../assets/images/Poisned.png';
 import soar from '../assets/images/Soar.png';
 import tusk from '../assets/images/Tuskmalwareanalysis.png';
 import multi from '../assets/images/multistage.png';
-import soar2 from '../assets/images/Splunk_Alert.png'
+import soar2 from '../assets/images/Splunk.png'
+import azure from '../assets/images/Azure.png'
+
 
 
 
 const projects = [
+     {
+    title: 'Cloud SOC: End-to-End Detection, Investigation & SOAR Automation in Azure (Sentinel + Logic Apps)',
+    description: 'Built a cloud-native SOC workflow in Microsoft Sentinel, detecting advanced threats with custom KQL rules and streamlining incident handling through Logic Apps automation, while providing end-to-end attack visibility via a powerful Azure dashboard.',
+    image: azure,
+    url: 'https://shubhamahirrao.notion.site/Hands-On-SOC-Workflow-Detect-Investigate-Automate-1dc2e78c860a8071b899dde507ec9b41',
+  },
    {
     title: 'Hands-On SOC Workflow: Detect, Investigate, Automate',
     description: 'Built a full SOC workflow detecting suspicious PowerShell activity using Splunk, automated alerting via Tines, and real-time Slack notifications. Expanded detections through manual hunting and visualized attacker activity with a professional Splunk dashboard mapped to MITRE ATT&CK.',
     image: soar2,
     url: 'https://shubhamahirrao.notion.site/Hands-On-SOC-Workflow-Detect-Investigate-Automate-1dc2e78c860a8071b899dde507ec9b41?pvs=74',
   },
-  {
-    title: 'SOAR EDR Project: Integrating LimaCharlie, Tines, Slack, and Email for Enhanced Cybersecurity',
-    description: 'This project leverages LimaCharlie, Tines, Slack, and Email to automatically detect Suspicious Utility, notify relevant personnel, and manage machine isolation decisions, streamlining incident response and enhancing threat mitigation.',
-    image: soar,
-    url: 'https://shubhamahirrao.notion.site/SOAR-EDR-Project-Integrating-LimaCharlie-Tines-Slack-and-Email-for-Enhanced-Cybersecurity-e50e45293739466d8f4cc45bfb837827',
-  },
+  
   {
     title: 'Conti Ransomware Incident Analysis Using Splunk',
     description: 'This project utilized Splunk to analyze security logs, detect indicators of Conti ransomware activity, and track network anomalies. By correlating data from various sources, it streamlined the identification and mitigation of the threat, enhancing overall cybersecurity defenses.',
@@ -67,6 +70,12 @@ const projects = [
     description: 'This investigation focused on detecting and mitigating suspicious activity observed during after-hours. The objective was to determine if the event was malicious, analyze how the intrusion occurred, and implement containment and remediation with minimal disruption to business operations.',
     image: multi,
     url: 'https://shubhamahirrao.notion.site/Case-Study-Multi-Stage-Intrusion-Investigation-1da2e78c860a8086a762dc343b2a1a0d',
+  },
+  {
+    title: 'SOAR EDR Project: Integrating LimaCharlie, Tines, Slack, and Email for Enhanced Cybersecurity',
+    description: 'This project leverages LimaCharlie, Tines, Slack, and Email to automatically detect Suspicious Utility, notify relevant personnel, and manage machine isolation decisions, streamlining incident response and enhancing threat mitigation.',
+    image: soar,
+    url: 'https://shubhamahirrao.notion.site/SOAR-EDR-Project-Integrating-LimaCharlie-Tines-Slack-and-Email-for-Enhanced-Cybersecurity-e50e45293739466d8f4cc45bfb837827',
   },
   // Add more projects as needed
 ];

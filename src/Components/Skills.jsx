@@ -36,7 +36,7 @@ const skillData = [
   },
   {
     title: 'Endpoint Detection',
-    items: ['EDR Tools (CrowdStrike, SentinelOne)'],
+    items: ['EDR Tools (CrowdStrike, Microsoft Defender for Endpoint)'],
   },
   {
     title: 'Scripting Basics',
@@ -52,7 +52,7 @@ const skillData = [
   },
   {
     title: 'Certs',
-    items: ['Security+', 'Google Cybersecurity Professional Certificate' ],
+    items: ['CompTIA Security+', 'Google Cybersecurity Professional Certificate' ],
   },
 ];
 
