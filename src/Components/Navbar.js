@@ -1,76 +1,124 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, Box, IconButton, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = ({ refs }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = useState(null);
+  const [active, setActive] = useState('Home');
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
+
+  const scrollToSection = (ref, section) => {
+    if (ref && ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop - 60, // offset for navbar height
+        behavior: 'smooth',
+      });
+    }
+    setActive(section);
+    handleMenuClose();
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-  const scrollToSection = (ref) => {
-    window.scrollTo({
-      top: ref.current.offsetTop,
-      behavior: 'smooth',
-    });
-    handleMenuClose(); // Close the menu after clicking
-  };
+  const menuItems = [
+    { label: 'Home', ref: refs.heroRef },
+    { label: 'Profile', ref: refs.profileRef },
+    { label: 'Certifications', ref: refs.compTIARef },
+    { label: 'Skills', ref: refs.skillRef },
+    { label: 'Portfolio', ref: refs.portfolioRef },
+    { label: 'Contact', ref: refs.footerRef }, // new contact item
+  ];
 
   return (
-    <>
-      <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
-        <Toolbar sx={{ position: 'relative' }}>
-          {/* Navigation Items */}
-          <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1, marginLeft: 'auto' }}>
-            {!isMobile && (
-              <>
-                <Button color="inherit" sx={{ fontFamily: 'Poppins', marginRight: 2 }} onClick={() => scrollToSection(refs.heroRef)}>Home</Button>
-                <Button color="inherit" sx={{ fontFamily: 'Poppins', marginRight: 2 }} onClick={() => scrollToSection(refs.profileRef)}>Profile</Button>
-                <Button color="inherit" sx={{ fontFamily: 'Poppins', marginRight: 2 }} onClick={() => scrollToSection(refs.compTIARef)}>Certifications</Button>
-                <Button color="inherit" sx={{ fontFamily: 'Poppins', marginRight: 2 }} onClick={() => scrollToSection(refs.skillRef)}>Skills</Button>
-                <Button color="inherit" sx={{ fontFamily: 'Poppins', marginRight: 2 }} onClick={() => scrollToSection(refs.portfolioRef)}>Portfolio</Button>
-                
-              </>
-            )}
+    <AppBar
+      position="fixed"
+      sx={{
+        background: 'rgba(13, 13, 13, 0.85)',
+        backdropFilter: 'blur(10px)',
+        boxShadow: '0 2px 12px rgba(0,0,0,0.5)',
+      }}
+    >
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        
+        {/* Logo or Name */}
+        <Box sx={{ fontWeight: 'bold', fontFamily: 'Poppins', fontSize: '1.2rem', color: '#00bcd4' }}>
+          Shubham Ahirrao
+        </Box>
+
+        {/* Desktop Menu */}
+        {!isMobile && (
+          <Box>
+            {menuItems.map((item) => (
+              <Button
+                key={item.label}
+                onClick={() => scrollToSection(item.ref, item.label)}
+                sx={{
+                  fontFamily: 'Poppins',
+                  color: active === item.label ? '#00bcd4' : '#fff',
+                  position: 'relative',
+                  mx: 1,
+                  '&:after': {
+                    content: '""',
+                    position: 'absolute',
+                    left: 0,
+                    bottom: 0,
+                    width: active === item.label ? '100%' : '0',
+                    height: '2px',
+                    backgroundColor: '#00bcd4',
+                    transition: 'width 0.3s ease',
+                  },
+                  '&:hover:after': {
+                    width: '100%',
+                  },
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
           </Box>
+        )}
 
-          {/* Hamburger Menu for Mobile */}
-          {isMobile && (
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label="menu"
-              onClick={handleMenuOpen}
-              sx={{ position: 'absolute', right: 20 }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-
-          {/* Menu for Mobile */}
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
+        {/* Mobile Hamburger */}
+        {isMobile && (
+          <IconButton
+            edge="end"
+            color="inherit"
+            aria-label="menu"
+            onClick={handleMenuOpen}
           >
-            <MenuItem onClick={() => scrollToSection(refs.heroRef)} sx={{ fontFamily: 'Poppins' }}>Home</MenuItem>
-            <MenuItem onClick={() => scrollToSection(refs.profileRef)} sx={{ fontFamily: 'Poppins' }}>Profile</MenuItem>
-            <MenuItem onClick={() => scrollToSection(refs.compTIARef)} sx={{ fontFamily: 'Poppins' }}>CompTIA</MenuItem>
-            <MenuItem onClick={() => scrollToSection(refs.skillRef)} sx={{ fontFamily: 'Poppins' }}>Skills</MenuItem>
-            <MenuItem onClick={() => scrollToSection(refs.portfolioRef)} sx={{ fontFamily: 'Poppins' }}>Portfolio</MenuItem>
-            
-          </Menu>
-        </Toolbar>
-      </AppBar>
-    </>
+            <MenuIcon />
+          </IconButton>
+        )}
+
+        {/* Mobile Dropdown */}
+        <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
+          {menuItems.map((item) => (
+            <MenuItem
+              key={item.label}
+              onClick={() => scrollToSection(item.ref, item.label)}
+              sx={{ fontFamily: 'Poppins' }}
+            >
+              {item.label}
+            </MenuItem>
+          ))}
+        </Menu>
+      </Toolbar>
+    </AppBar>
   );
 };
 
 export default Navbar;
+
+

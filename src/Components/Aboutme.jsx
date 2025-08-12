@@ -1,135 +1,102 @@
-import React from 'react';
-import { Grid, Typography, Paper, Button } from '@mui/material';
-import profileImage from '../assets/images/with gradient bg.png'; // Adjust path based on your folder structure
+import React from "react";
+import { Box, Typography, Container, Grid, Button } from "@mui/material";
+import { styled } from "@mui/system";
+import profileImage from "../assets/images/white shirt.png"; // adjust the path as needed
+import resumePdf from "../assets/images/ShubhamAhirrao_Resume.pdf"; // <-- add your resume here
 
-const Profile = () => {
+const AboutWrapper = styled(Box)(({ theme }) => ({
+  background: "linear-gradient(180deg, #0b0b0b 0%, #101820 100%)",
+  color: "#fff",
+  padding: theme.spacing(10, 0),
+}));
+
+const Highlight = styled("span")(({ theme }) => ({
+  color: "#00bcd4",
+  fontWeight: 700,
+}));
+
+export default function AboutMe() {
   return (
-    <Paper
-      sx={{
-        padding: 3,
-        maxWidth: 600,
-        margin: 'auto',
-        display: 'flex',
-        alignItems: 'center',
-        background: 'linear-gradient(135deg, #1f1f1f 0%, #2c2c2c 100%)',
-        boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.4)',
-        borderRadius: '12px',
-        overflow: 'hidden',
-      }}
-    >
-      <Grid container spacing={3} alignItems="center">
-        <Grid item>
-          <img
-            src={profileImage}  // Use the imported image
-            alt="Profile"
-            style={{
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%',
-              border: '5px solid #00bcd4',
-              boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.5)',
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              
-            }}
-          />
-        </Grid>
-        <Grid item xs>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'flex-start',
-              height: '100%',
-              padding: '0 16px',
-            }}
-          >
-            <Typography
-              variant="h5"
+    <AboutWrapper id="about">
+      <Container maxWidth="lg">
+        <Grid container spacing={6} alignItems="center">
+          {/* Left Column - Image */}
+          <Grid item xs={12} md={5}>
+            <Box
+              component="img"
+              src={profileImage}
+              alt="Your profile"
               sx={{
-                marginBottom: 1,
-                color: '#ffffff',
-                fontSize: '2rem',
-                fontWeight: '600',
-                textTransform: 'capitalize',
-                letterSpacing: '0.5px',
+                width: "100%",
+                maxWidth: "380px",
+                height: "auto",
+                display: "block",
+                margin: "0 auto",
+                borderRadius: "16px",
+                boxShadow: "0 0 30px rgba(0, 188, 212, 0.3)",
               }}
-            >
-              Shubham Ahirrao
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: '#b0bec5',
-                fontSize: '1.1rem',
-                marginBottom: '8px',
-                fontWeight: '400',
-                letterSpacing: '0.3px',
-              }}
-            >
-              Contact No: +91 8421574875
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: '#b0bec5',
-                fontSize: '1.1rem',
-                marginBottom: '8px',
-                fontWeight: '400',
-                letterSpacing: '0.3px',
-              }}
-            >
-              Email: shubhamahirrao.cyber@gmail.com
-            </Typography>
-            {/* <Typography
-              variant="body1"
-              sx={{
-                color: '#b0bec5',
-                fontSize: '1.1rem',
-                marginBottom: '8px',
-                fontWeight: '400',
-                letterSpacing: '0.3px',
-              }}
-            >
-              Language: English, Hindi, Marathi
-            </Typography> */}
-            {/* <Typography
-              variant="body1"
-              sx={{
-                color: '#b0bec5',
-                fontSize: '1.1rem',
-                marginBottom: '8px',
-                fontWeight: '400',
-                letterSpacing: '0.3px',
-              }}
-            >
-              Location: Pune, Maharashtra, India
-            </Typography> */}
-            {/* <Button
-              variant="contained"
-              color="primary"
-              href="/path/to/your/cv.pdf"
-              download
-              sx={{
-                marginTop: 2,
-                borderRadius: '8px',
-                padding: '10px 20px',
-                fontSize: '1rem',
-                textTransform: 'none',
-                backgroundColor: '#00bcd4',
-                '&:hover': {
-                  backgroundColor: '#0097a7',
-                },
-              }}
-            >
-              Download CV
-            </Button> */}
-          </div>
-        </Grid>
-      </Grid>
-    </Paper>
-  );
-};
+            />
+          </Grid>
 
-export default Profile;
+          {/* Right Column - Text */}
+          <Grid item xs={12} md={7}>
+            <Typography variant="overline" sx={{ color: "#bdbdbd", letterSpacing: 1 }}>
+              About Me
+            </Typography>
+
+            <Typography variant="h3" sx={{ fontWeight: 800, mt: 1, lineHeight: 1.2 }}>
+              Cybersecurity isn’t just my job — it’s my <Highlight>mission</Highlight>.
+            </Typography>
+
+            <Typography variant="body1" sx={{ color: "#bdbdbd", mt: 2, mb: 3 }}>
+              I specialize in <Highlight>threat detection</Highlight>, <Highlight>incident response</Highlight>,
+              and <Highlight>security automation</Highlight>. From designing SIEM rules to automating
+              phishing playbooks, I help organizations defend against evolving cyber threats.
+            </Typography>
+
+            <Grid container spacing={3} sx={{ mb: 4 }}>
+              <Grid item xs={6}>
+                <Typography variant="h4" sx={{ fontWeight: 800, color: "#00bcd4" }}>
+                  2.9
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#bdbdbd" }}>
+                  Years Experience
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant="h4" sx={{ fontWeight: 800, color: "#00bcd4" }}>
+                  {/* Add data if needed */}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#bdbdbd" }}>
+                  {/* Add description */}
+                </Typography>
+              </Grid>
+            </Grid>
+
+            {/* Download Resume Button */}
+            <Button
+              component="a"
+              href={resumePdf}
+              download="Shubham_Ahirrao_Resume.pdf" // name of the file when downloaded
+              variant="contained"
+              sx={{
+                bgcolor: "#00bcd4",
+                color: "#000",
+                fontWeight: 600,
+                px: 4,
+                borderRadius: "22px",
+                "&:hover": { bgcolor: "#00acc1" },
+              }}
+            >
+              Download Resume
+            </Button>
+          </Grid>
+        </Grid>
+      </Container>
+    </AboutWrapper>
+  );
+}
+
+
+
+

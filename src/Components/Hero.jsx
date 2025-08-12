@@ -1,128 +1,123 @@
-import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
-import { keyframes } from '@emotion/react';
-import { styled } from '@mui/material/styles';
+import React from "react";
+import { Box, Typography, Button, Container, Stack } from "@mui/material";
+import { styled } from "@mui/system";
 
-// Define keyframes for the animation
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+const HeroWrapper = styled(Box)(({ theme }) => ({
+  position: "relative",
+  backgroundColor: "#0b0b0b",
+  minHeight: "92vh",
+  display: "flex",
+  alignItems: "center",
+  color: "#fff",
+  overflow: "hidden",
+}));
 
-// Styled component for the hero section with background image
-const HeroSection = styled(Box)({
-  position: 'relative',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '100vh',
-  backgroundImage: 'url(https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Replace with your image URL
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  color: '#ffffff',
-  textAlign: 'center',
-  animation: `${fadeIn} 2s ease-in-out`,
-  // Add overlay
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Blackish overlay with 50% opacity
-    zIndex: 1,
-  },
-  // Responsive design
-  '@media (max-width: 768px)': {
-    height: '80vh', // Adjust height on smaller screens
-  },
-  '@media (max-width: 480px)': {
-    height: '60vh', // Further adjust height on very small screens
+const BackgroundOverlay = styled(Box)({
+  position: "absolute",
+  inset: 0,
+  background:
+    "linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.75)), repeating-linear-gradient(-25deg, rgba(0,180,150,0.022) 0 2px, transparent 2px 20px)",
+  animation: "bgShift 18s linear infinite",
+  "@keyframes bgShift": {
+    from: { backgroundPosition: "0 0" },
+    to: { backgroundPosition: "2000px 0" },
   },
 });
 
-// Styled container for the text content
-const ContentContainer = styled(Box)({
-  padding: '2rem',
-  borderRadius: '8px',
-  maxWidth: '600px',
-  width: '100%',
-  position: 'relative',
+const GlassOverlay = styled(Box)({
+  position: "absolute",
+  inset: 0,
+  background: "linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.85))",
+});
+
+const HeroContent = styled(Container)(({ theme }) => ({
+  position: "relative",
   zIndex: 2,
-  // Responsive design
-  '@media (max-width: 768px)': {
-    padding: '1.5rem',
-  },
-  '@media (max-width: 480px)': {
-    padding: '1rem',
-  },
-});
+  textAlign: "center",
+  maxWidth: "980px",
+  padding: theme.spacing(6, 3),
+}));
 
-const HeroText = styled(Typography)({
-  fontSize: '3rem',
-  fontWeight: 'bold',
-  marginBottom: '1rem',
-  // Responsive design
-  '@media (max-width: 768px)': {
-    fontSize: '2.5rem',
-  },
-  '@media (max-width: 480px)': {
-    fontSize: '2rem',
-  },
-});
+export default function Hero() {
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
-const HeroDescription = styled(Typography)({
-  fontSize: '1.5rem',
-  marginBottom: '2rem',
-  // Responsive design
-  '@media (max-width: 768px)': {
-    fontSize: '1.25rem',
-  },
-  '@media (max-width: 480px)': {
-    fontSize: '1rem',
-  },
-});
-
-const HeroButton = styled(Button)({
-  color: '#ffffff', // White text color
-  border: '2px solid #ffffff', // White curved border
-  backgroundColor: 'transparent', // No background
-  padding: '0.5rem 2rem',
-  fontSize: '1rem',
-  borderRadius: '22px',
-  '&:hover': {
-    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Slight background on hover
-  },
-  // Responsive design
-  '@media (max-width: 768px)': {
-    padding: '0.5rem 1.5rem',
-    fontSize: '0.9rem',
-  },
-  '@media (max-width: 480px)': {
-    padding: '0.5rem 1rem',
-    fontSize: '0.8rem',
-  },
-});
-
-const HeroPage = () => {
   return (
-    <HeroSection>
-      <ContentContainer>
-        <HeroText>
-          Hi, I am <span style={{ color: '#00bcd4' }}>Shubham</span>
-        </HeroText>
-        <HeroDescription>
-          Welcome to my cybersecurity portfolio! Explore my work in safeguarding digital assets, identifying threats, and strengthening security protocols.
-</HeroDescription>
-       
-      </ContentContainer>
-    </HeroSection>
-  );
-};
+    <HeroWrapper>
+      <BackgroundOverlay />
+      <GlassOverlay />
+      <HeroContent>
+        <Typography
+          variant="overline"
+          sx={{ color: "#bdbdbd", letterSpacing: "1px", fontWeight: 600 }}
+        >
+          SOC Analyst • Threat Detection & Analysis • Security Monitoring
+        </Typography>
 
-export default HeroPage;
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 800,
+            lineHeight: 1.1,
+            mt: 1,
+          }}
+        >
+          Stopping Cyber Threats{" "}
+          <Box component="span" sx={{ color: "#00bcd4" }}>
+            Before They Stop You
+          </Box>
+        </Typography>
+
+        <Typography
+          variant="subtitle1"
+          sx={{ color: "#bdbdbd", mt: 2, maxWidth: "820px", mx: "auto" }}
+        >
+          I detect, automate response, and investigate advanced threats
+          {/* — Splunk • Sentinel • Tines • LimaCharlie */}
+        </Typography>
+
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+          justifyContent="center"
+          sx={{ mt: 4 }}
+        >
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              bgcolor: "#00bcd4",
+              color: "#000",
+              fontWeight: 600,
+              px: 4,
+              borderRadius: "22px",
+              "&:hover": { bgcolor: "#00acc1" },
+            }}
+            onClick={() => scrollToSection("portfolio")}
+          >
+            See My Work
+          </Button>
+
+          <Button
+            variant="outlined"
+            size="large"
+            sx={{
+              color: "#fff",
+              borderColor: "#fff",
+              fontWeight: 600,
+              px: 4,
+              borderRadius: "22px",
+              "&:hover": { borderColor: "#00bcd4", color: "#00bcd4" },
+            }}
+            onClick={() => scrollToSection("about")}
+          >
+            Learn More
+          </Button>
+        </Stack>
+      </HeroContent>
+    </HeroWrapper>
+  );
+}
+
