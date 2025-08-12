@@ -1,26 +1,21 @@
 {
   "files": {
     "main.css": "/work-portfolios/static/css/main.f78d6424.css",
-    "main.js": "/work-portfolios/static/js/main.15abf5b9.js",
+    "main.js": "/work-portfolios/static/js/main.a7578ba9.js",
     "static/js/453.84a7ef9b.chunk.js": "/work-portfolios/static/js/453.84a7ef9b.chunk.js",
-    "static/media/Soar.png": "/work-portfolios/static/media/Soar.0ab3d1be1702defc5cc7.png",
-    "static/media/Tuskmalwareanalysis.png": "/work-portfolios/static/media/Tuskmalwareanalysis.ac19b9b56cc74b2f868f.png",
-    "static/media/multistage.png": "/work-portfolios/static/media/multistage.0372a5f4ed856d30aa66.png",
-    "static/media/Fakegpt.png": "/work-portfolios/static/media/Fakegpt.19dc0077056f254d066f.png",
-    "static/media/Poisned.png": "/work-portfolios/static/media/Poisned.984c008276c57f5a900f.png",
-    "static/media/Incidentresponse.png": "/work-portfolios/static/media/Incidentresponse.b685458187dabab5f631.png",
-    "static/media/Wireshark.png": "/work-portfolios/static/media/Wireshark.38767829cf2d844ca1d3.png",
     "static/media/Azure.png": "/work-portfolios/static/media/Azure.1e77ec1d6309b688b187.png",
-    "static/media/Conti.png": "/work-portfolios/static/media/Conti.87ecc36a079eae94f82d.png",
     "static/media/Splunk.png": "/work-portfolios/static/media/Splunk.235fa0a17b234a5eee5f.png",
-    "static/media/with gradient bg.png": "/work-portfolios/static/media/with gradient bg.dd9314f63bd995196613.png",
+    "static/media/white shirt.png": "/work-portfolios/static/media/white shirt.6f3ba2d6b372330c7e83.png",
+    "static/media/cert-google.png": "/work-portfolios/static/media/cert-google.7c747b1508f35f083506.png",
+    "static/media/ShubhamAhirrao_Resume.pdf": "/work-portfolios/static/media/ShubhamAhirrao_Resume.205b41e5a1fb7e70c423.pdf",
+    "static/media/cert-securityplus.png": "/work-portfolios/static/media/cert-securityplus.dcb9fe06e17fb2ca7dc8.png",
     "index.html": "/work-portfolios/index.html",
     "main.f78d6424.css.map": "/work-portfolios/static/css/main.f78d6424.css.map",
-    "main.15abf5b9.js.map": "/work-portfolios/static/js/main.15abf5b9.js.map",
+    "main.a7578ba9.js.map": "/work-portfolios/static/js/main.a7578ba9.js.map",
     "453.84a7ef9b.chunk.js.map": "/work-portfolios/static/js/453.84a7ef9b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f78d6424.css",
-    "static/js/main.15abf5b9.js"
+    "static/js/main.a7578ba9.js"
   ]
 }
