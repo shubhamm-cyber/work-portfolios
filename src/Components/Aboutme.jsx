@@ -3,6 +3,7 @@ import { Box, Typography, Container, Grid, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import profileImage from "../assets/images/white shirt.png"; // adjust the path as needed
 import resumePdf from "../assets/images/ShubhamAhirrao_Resume.pdf"; // <-- add your resume here
+import resumePdf2 from "../assets/images/Shubham_Ahirrao_2026.pdf";
 
 const AboutWrapper = styled(Box)(({ theme }) => ({
   background: "linear-gradient(180deg, #0b0b0b 0%, #101820 100%)",
@@ -41,7 +42,7 @@ export default function AboutMe() {
           {/* Right Column - Text */}
           <Grid item xs={12} md={7}>
             <Typography variant="overline" sx={{ color: "#bdbdbd", letterSpacing: 1 }}>
-              About Me
+              Profile
             </Typography>
 
             <Typography variant="h3" sx={{ fontWeight: 800, mt: 1, lineHeight: 1.2 }}>
@@ -51,13 +52,13 @@ export default function AboutMe() {
             <Typography variant="body1" sx={{ color: "#bdbdbd", mt: 2, mb: 3 }}>
               I specialize in <Highlight>threat detection</Highlight>, <Highlight>incident response</Highlight>,
               and <Highlight>security automation</Highlight>. From designing SIEM rules to automating
-              phishing playbooks, I help organizations defend against evolving cyber threats.
+              playbooks, I help organizations defend against evolving cyber threats.
             </Typography>
 
             <Grid container spacing={3} sx={{ mb: 4 }}>
               <Grid item xs={6}>
                 <Typography variant="h4" sx={{ fontWeight: 800, color: "#00bcd4" }}>
-                  2.9
+                  3.1
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#bdbdbd" }}>
                   Years Experience
@@ -76,8 +77,8 @@ export default function AboutMe() {
             {/* Download Resume Button */}
             <Button
               component="a"
-              href={resumePdf}
-              download="Shubham_Ahirrao_Resume.pdf" // name of the file when downloaded
+              href={resumePdf2}
+              download="Shubham_Ahirrao_2026.pdf" // name of the file when downloaded
               variant="contained"
               sx={{
                 bgcolor: "#00bcd4",

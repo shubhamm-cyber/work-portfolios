@@ -53,7 +53,7 @@ export default function Hero() {
           variant="overline"
           sx={{ color: "#bdbdbd", letterSpacing: "1px", fontWeight: 600 }}
         >
-          SOC Analyst • Threat Detection & Analysis • Security Monitoring
+          SOC Analyst | Threat Detection | Incident Investigation | Security Automation
         </Typography>
 
         <Typography

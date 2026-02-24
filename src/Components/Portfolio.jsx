@@ -3,6 +3,7 @@ import { Box, Typography, Container, Grid, Button, List, ListItem, ListItemText 
 import { styled } from "@mui/system";
 import azureSOCImage from "../assets/images/Azure.png"; // Replace with your real screenshot
 import splunkSOCImage from "../assets/images/Splunk.png"; // Replace with your real screenshot
+import pythonSOCImage from "../assets/images/python.png";
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
   background: "linear-gradient(180deg, #101820 0%, #0b0b0b 100%)",
@@ -11,6 +12,19 @@ const SectionWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const projects = [
+  {
+    title: "SOC Automation & Detection Engineering Project",
+    subtitle: "(Python SOAR | Splunk SIEM)",
+    image: pythonSOCImage,
+    link: "https://github.com/shubhamm-cyber/soc-automation-pipeline", // Replace with your link
+    bullets: [
+      "Designed and deployed an end-to-end phishing investigation and response automation workflow using Splunk Enterprise and a Python-based SOAR system.",
+      "Built custom SPL detection rules to identify credential harvesting behavior and suspicious phishing domain activity.",
+      "Developed automated investigation workflows using Flask webhooks and Python to correlate events, reconstruct attack timelines, and calculate dynamic risk scores.",
+      "Integrated MITRE ATT&CK mapping, structured incident indexing via Splunk HEC, and analyst-focused dashboards for centralized SOC visibility.",
+      "Automated incident lifecycle processes including detection → investigation → severity classification → response recommendation."
+    ]
+  },
   {
     title: "Cloud SOC: End-to-End Detection, Investigation & SOAR Automation",
     subtitle: "(Azure Sentinel + Logic Apps)",
