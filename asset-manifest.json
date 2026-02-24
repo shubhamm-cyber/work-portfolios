@@ -1,21 +1,23 @@
 {
   "files": {
     "main.css": "/work-portfolios/static/css/main.f78d6424.css",
-    "main.js": "/work-portfolios/static/js/main.a7578ba9.js",
+    "main.js": "/work-portfolios/static/js/main.f9c6cb0f.js",
     "static/js/453.84a7ef9b.chunk.js": "/work-portfolios/static/js/453.84a7ef9b.chunk.js",
+    "static/media/python.png": "/work-portfolios/static/media/python.24995b6d062b91d0fd5b.png",
     "static/media/Azure.png": "/work-portfolios/static/media/Azure.1e77ec1d6309b688b187.png",
     "static/media/Splunk.png": "/work-portfolios/static/media/Splunk.235fa0a17b234a5eee5f.png",
     "static/media/white shirt.png": "/work-portfolios/static/media/white shirt.6f3ba2d6b372330c7e83.png",
     "static/media/cert-google.png": "/work-portfolios/static/media/cert-google.7c747b1508f35f083506.png",
     "static/media/ShubhamAhirrao_Resume.pdf": "/work-portfolios/static/media/ShubhamAhirrao_Resume.205b41e5a1fb7e70c423.pdf",
+    "static/media/Shubham_Ahirrao_2026.pdf": "/work-portfolios/static/media/Shubham_Ahirrao_2026.f3fce3f7c0000cc94d04.pdf",
     "static/media/cert-securityplus.png": "/work-portfolios/static/media/cert-securityplus.dcb9fe06e17fb2ca7dc8.png",
     "index.html": "/work-portfolios/index.html",
     "main.f78d6424.css.map": "/work-portfolios/static/css/main.f78d6424.css.map",
-    "main.a7578ba9.js.map": "/work-portfolios/static/js/main.a7578ba9.js.map",
+    "main.f9c6cb0f.js.map": "/work-portfolios/static/js/main.f9c6cb0f.js.map",
     "453.84a7ef9b.chunk.js.map": "/work-portfolios/static/js/453.84a7ef9b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f78d6424.css",
-    "static/js/main.a7578ba9.js"
+    "static/js/main.f9c6cb0f.js"
   ]
 }
